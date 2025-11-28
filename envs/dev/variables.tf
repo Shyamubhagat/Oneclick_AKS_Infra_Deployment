@@ -85,4 +85,13 @@ variable "aks_clusters" {
   
 }
 
+variable "acr_registries" {
+    type = map(object({
+        name                = string
+        location            = string
+        resource_group_name = string
+        sku                 = string
+    }))
+  
+}
 
