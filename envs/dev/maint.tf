@@ -58,3 +58,10 @@ module "aks_cluster" {
   aks_clusters = var.aks_clusters
   depends_on   = [ module.infra_resource_group, module.networks ]
 }
+
+module "acr" {
+    source = "../../modules/azurerm_container_registry"
+    acr_registries = var.acr_registries
+    depends_on = [ module.infra_resource_group ]
+  
+}
